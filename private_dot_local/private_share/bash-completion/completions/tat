@@ -1,0 +1,19 @@
+# stigok, feb 2019
+_tat()
+{
+    local cur opts arglen
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+
+    # All existing tmux session names
+    opts="$(tmux ls -F '#{session_name}')"
+
+    # The `tat` binary should only accept a single argument.
+    # Only trigger completion on the first arg (after the binary name itself)
+    arglen=${#COMP_WORDS[@]}
+    if [ $arglen -eq 2 ]; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        return 0
+    fi
+}
+complete -F _tat tat
