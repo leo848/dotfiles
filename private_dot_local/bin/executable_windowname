@@ -1,0 +1,49 @@
+#!/usr/bin/bash
+
+# This script returns the current window title, or, if no window is
+# focused, the name of the wallpaper.
+
+# Try to get the window title via 
+# If it fails, get the wallpaper name
+
+function metadata_emoji() {
+    if ![[ -e /tmp/wallpaper.log ]]; then
+	printf "~"
+        return
+    fi
+    wallpaper=$(tail -n 1 /tmp/wallpaper.log)
+
+    flash=$(exiftool -b -Flash "$wallpaper")
+    exposure=$(exiftool -b -ExposureTime "$wallpaper")
+
+    # If flash is 0 or empty, there is no flash
+    if [[ -z "$flash" || "$flash" == "0" ]]; then
+        printf "📷"
+    else
+        printf "📸"
+    fi
+
+    if (( $(echo "$exposure > 0.5" | bc -l) )); then
+        printf "🐌"
+    elif (( $(echo "$exposure < 0.004" | bc -l) )); then
+        printf "🐇"
+    fi
+}
+
+ACTIVE_WINDOW=$(xdotool getactivewindow getwindowname 2>/dev/null)
+
+# If it isn't empty, return it - else get the wallpaper name
+
+if [ -n "$ACTIVE_WINDOW" ]; then
+    echo "$ACTIVE_WINDOW"
+else
+    WALLPAPER=$(tail -n 1 /tmp/wallpaper.log)
+
+    # TODO: Memoize the output of this script.
+    # If the wallpaper hasn't changed, return the cached output
+
+    DATE=$(exiftool -d "%d.%m.%Y %H:%M:%S" -DateTimeOriginal "$WALLPAPER" | awk '{print $4 " " $5}')
+    META=$(metadata_emoji)
+
+    echo "$DATE $META"
+fi
