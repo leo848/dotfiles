@@ -19,6 +19,6 @@ alias che='chezmoi'
 
 alias grep='grep --color=auto'
 
-PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
 
 eval "$(starship init bash)"
