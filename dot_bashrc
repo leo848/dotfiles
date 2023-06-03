@@ -11,7 +11,12 @@ export VISUAL="nvim"
 alias ls='exa'
 alias ll='exa -La'
 alias la='exa -a'
+
+alias cat='bat'
+alias pacman='sudo pacman'
+
 alias grep='grep --color=auto'
+
 PS1='[\u@\h \W]\$ '
 
 eval "$(starship init bash)"
