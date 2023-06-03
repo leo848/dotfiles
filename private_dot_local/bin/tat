@@ -1,0 +1,10 @@
+#!/bin/bash
+# List existing tmux sessions, attach to existing, or create a new session
+# stigok, feb 2019
+
+if [ -z $1 ]; then
+  tmux list-sessions
+else
+  tmux new -As $1
+fi
+
