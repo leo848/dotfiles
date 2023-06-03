@@ -9,7 +9,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 alias ls='exa'
-alias ll='exa -La'
+alias ll='exa --list -a'
 alias la='exa -a'
 
 alias cat='bat'
