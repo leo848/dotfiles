@@ -12,6 +12,8 @@ alias ls='exa'
 alias la='exa -a'
 alias ll='exa --long -a'
 
+alias vim='nvim'
+
 alias cat='bat'
 alias pacman='sudo pacman'
 
