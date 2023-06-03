@@ -17,7 +17,7 @@ alias pacman='sudo pacman'
 
 alias grep='grep --color=auto'
 
-PATH="$PATH:$HOME/.cargo"
+PATH="$PATH:$HOME/.cargo/bin"
 
 PS1='[\u@\h \W]\$ '
 
