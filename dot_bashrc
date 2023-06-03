@@ -18,6 +18,7 @@ alias cat='bat'
 alias pacman='sudo pacman'
 
 alias che='chezmoi'
+alias btop='btop --utf-force'
 
 alias grep='grep --color=auto'
 
