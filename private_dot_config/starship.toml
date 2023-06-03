@@ -1,0 +1,18 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+[cmd_duration]
+min_time = 1000
+
+[status]
+disabled = false
+pipestatus = true
+map_symbol = true
+
+[sudo]
+disabled = false
+
+[memory_usage]
+disabled = false
+threshold = 80
