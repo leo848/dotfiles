@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# If this script is already running, kill the old one.
+# It is detected via pgrep.
+# It is important to only kill the old one, because else it will kill itself.
+
+ALL_PROCESSES=$(pgrep -f "update-wallpapers")
+
+if [ "$(echo "$ALL_PROCESSES" | wc -l)" -gt 1 ]; then
+	last=$(echo "$ALL_PROCESSES" | head -n 1)
+	echo "Killing old process ($last)"
+	kill -9 "$last"
+fi
+
+
+while true
+do
+	# The glob is stored in the file "~/.config/update-wallpapers/glob.txt"
+	wall_glob=$(cat ~/.config/update-wallpapers/glob.txt)
+	# Expand the glob
+	wall=$(eval find "$wall_glob" | shuf -n 1)
+
+	echo "Setting wallpaper to $wall"
+	echo "$wall" >> /tmp/wallpaper.log
+	feh --bg-fill "$wall"
+	# Sleep for the given time (the first argument) or 5 minutes if no argument is given
+	sleep "${1:-300}"
+done
