@@ -17,6 +17,8 @@ alias pacman='sudo pacman'
 
 alias grep='grep --color=auto'
 
+PATH="$PATH:$HOME/.local/.cargo"
+
 PS1='[\u@\h \W]\$ '
 
 eval "$(starship init bash)"
