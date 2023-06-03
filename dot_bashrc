@@ -22,6 +22,6 @@ alias btop='btop --utf-force'
 
 alias grep='grep --color=auto'
 
-PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
+PATH="$HOME/.local/bin:$PATH:$HOME/.cargo/bin"
 
 eval "$(starship init bash)"
