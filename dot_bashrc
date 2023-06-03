@@ -9,8 +9,8 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 alias ls='exa'
-alias ll='exa --list -a'
 alias la='exa -a'
+alias ll='exa --long -a'
 
 alias cat='bat'
 alias pacman='sudo pacman'
