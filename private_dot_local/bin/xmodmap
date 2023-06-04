@@ -2,7 +2,7 @@
 ! make caps_lock an additional control
 clear Lock
 ! NOTE: this keycode may need to be changed for your control
-keycode 37 = Control_L
+keycode 9 = Control_L
 add Control = Control_L
 
 !
