@@ -1,4 +1,4 @@
 #!/bin/sh
 
-xmodmap xmodmaprc
+xmodmap $0/../xmodmaprc
 xcape -e 'Control_L=Escape'
