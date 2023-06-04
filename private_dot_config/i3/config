@@ -196,11 +196,11 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec /usr/bin/picom 
 
 # Wallpaper
-# exec_always --no-startup-id $HOME/.local/bin/update-wallpapers
+exec_always --no-startup-id $HOME/.local/bin/update-wallpapers
 
 # Start xcape to make the caps lock key act as escape when tapped
 # and as ctrl when held down
-# exec --no-startup-id xcape -e 'Control_L=Escape'
+exec --no-startup-id xcape -e 'Control_L=Escape'
 
 # Start ~/.local/bin/i3-mode-env
 # exec --no-startup-id $HOME/.local/bin/i3-mod
