@@ -1,4 +1,4 @@
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': 'NerdTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
