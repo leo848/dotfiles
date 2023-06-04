@@ -15,6 +15,7 @@ alias la='exa -a --icons'
 alias ll='exa --long -a --icons'
 
 alias vim='nvim'
+alias py='python'
 
 alias cat='bat'
 alias pacman='sudo pacman'
