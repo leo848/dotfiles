@@ -7,7 +7,7 @@
 # If it fails, get the wallpaper name
 
 function metadata_emoji() {
-    if ![[ -e /tmp/wallpaper.log ]]; then
+    if ! [[ -e /tmp/wallpaper.log ]]; then
 	printf "~"
         return
     fi
