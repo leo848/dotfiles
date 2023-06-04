@@ -10,9 +10,9 @@ set -o vi
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-alias ls='exa'
-alias la='exa -a'
-alias ll='exa --long -a'
+alias ls='exa --icons'
+alias la='exa -a --icons'
+alias ll='exa --long -a --icons'
 
 alias vim='nvim'
 
