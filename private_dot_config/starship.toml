@@ -16,3 +16,7 @@ disabled = false
 [memory_usage]
 disabled = false
 threshold = 80
+
+[custom.che]
+symbol = '•'
+when = 'ischedirty'
