@@ -43,5 +43,6 @@ pathappend() {
 
 pathprepend "$HOME/.local/bin"
 pathappend "$HOME/.cargo/bin"
+pathprepend "$HOME/.config/rofi/scripts/"
 
 eval "$(starship init bash)"
