@@ -1,1 +1,1 @@
-/usr/bin/rofi -config ~/.config/rofi.rasi
+/usr/bin/rofi -config ~/.config/rofi.rasi $@
