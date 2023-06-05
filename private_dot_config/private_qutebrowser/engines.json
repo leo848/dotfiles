@@ -1,0 +1,15 @@
+{
+	"DEFAULT" : "http://127.0.0.1:8888/?q={}",
+	"crate": "https://lib.rs/{}",
+	"d" : "https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/?q={}",
+	"duck": "https://duck.com/?q={}",
+	"p5" : "https://p5js.org/reference/#/p5/{}",
+	"std": "https://doc.rust-lang.org/std/index.html?search={}",
+	"searx" : "http://127.0.0.1:8888/?q={}",
+	"tr" : "https://deepl.com/translator#xx/xx/{}",
+	"vfy" : "https://vuetifyjs.com/en/api/{}",
+	"vfy.next" : "https://next.vuetifyjs.com/en/api/{}",
+	"wiki": "https://en.wikipedia.org/wiki/Special:Search?search={}",
+	"wikide": "https://de.wikipedia.org/wiki/Special:Search?search={}",
+	"yt": "https://www.youtube.com/results?search_query={}"
+}
