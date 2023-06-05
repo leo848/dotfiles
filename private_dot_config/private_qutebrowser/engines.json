@@ -1,5 +1,5 @@
 {
-	"DEFAULT" : "http://127.0.0.1:8888/?q={}",
+	"DEFAULT" : "duck",
 	"arch": "https://wiki.archlinux.org/index.php?search={}",
 	"crate": "https://lib.rs/{}",
 	"d" : "https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/?q={}",
