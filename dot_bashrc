@@ -18,6 +18,7 @@ alias vim='nvim'
 alias py='python'
 
 alias cat='bat'
+alias bathelp='bat --plain --language=help'
 alias pacman='sudo pacman'
 
 alias che='chezmoi'
@@ -25,7 +26,22 @@ alias btop='btop --utf-force'
 
 alias grep='grep --color=auto'
 
+help() {
+	"$@" --help 2>&1 | bathelp
+}
 
-PATH="$HOME/.local/bin:$PATH:$HOME/.cargo/bin"
+pathprepend() {
+	if ! grep -q "$PATH" <<<"$1"; then
+		PATH="$1:$PATH"
+	fi
+}
+pathappend() {
+	if ! grep -q "$PATH" <<<"$1"; then
+		PATH="$PATH:$1"
+	fi
+}
+
+pathprepend "$HOME/.local/bin"
+pathappend "$HOME/.cargo/bin"
 
 eval "$(starship init bash)"
