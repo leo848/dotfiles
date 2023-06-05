@@ -69,7 +69,10 @@ config.bind("<Space>bg", "config-cycle --print colors.webpage.bg 'black' 'white'
 
 # search engines {{{
 with open(join(split(__file__)[0], "engines.json")) as f:
-    c.url.searchengines = json.load(f)
+    engines = json.load(f)
+    engines['DEFAULT'] = engines[engines['DEFAULT']]
+    c.url.searchengines = engines
+
 # }}}
 
 c.auto_save.session = True
