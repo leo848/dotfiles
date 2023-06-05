@@ -65,7 +65,7 @@ config.bind("<Space>bg", "config-cycle --print colors.webpage.bg 'black' 'white'
 # }}}
 
 # use tor
-c.content.proxy = 'socks://localhost:9050/'
+# c.content.proxy = 'socks://localhost:9050/'
 
 # search engines {{{
 with open(join(split(__file__)[0], "engines.json")) as f:
