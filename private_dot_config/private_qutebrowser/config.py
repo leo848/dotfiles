@@ -100,13 +100,13 @@ c.completion.favorite_paths = ["/home/leo/", "/home/leo/Documents/", "/home/leo/
 c.completion.use_best_match = True
 
 c.content.pdfjs = True
-c.content.javascript.clipboard = "access"
+# c.content.javascript.clipboard = "access"
 c.content.mouse_lock = True
 c.content.headers.accept_language = "en-US;en;de-DE;de;q=0.9"
 
 c.downloads.remove_finished = 250_000
 
-c.fonts.default_family = "IosevkaCustom"
+c.fonts.default_family = "Iosevka"
 c.fonts.default_size = "14pt"
 c.fonts.prompts = "14pt default_family"
 c.fonts.tabs.unselected = "14pt default_family"
