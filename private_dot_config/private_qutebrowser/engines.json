@@ -1,6 +1,6 @@
 {
 	"DEFAULT" : "http://127.0.0.1:8888/?q={}",
-	"arch": "https://wiki.archlinux.org/Special:Search?search={}",
+	"arch": "https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch",
 	"crate": "https://lib.rs/{}",
 	"d" : "https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/?q={}",
 	"duck": "https://duck.com/?q={}",
