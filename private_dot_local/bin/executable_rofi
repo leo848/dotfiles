@@ -1,1 +1,1 @@
-/usr/bin/rofi -config ~/.config/rofi.rasi $@
+launcher_t3
