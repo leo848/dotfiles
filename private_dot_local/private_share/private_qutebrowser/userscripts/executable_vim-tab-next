@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+exec >> $QUTE_FIFO
+
+echo "set content.proxy 'socks://localhost:9050'"
+if [ $QUTE_COUNT != "" ]
+then
+	echo "tab-focus $QUTE_COUNT"
+else
+	echo "tab-next"
+fi

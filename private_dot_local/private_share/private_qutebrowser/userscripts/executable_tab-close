@@ -1,0 +1,37 @@
+#!/bin/python3.9
+
+import os
+import time
+
+class Qute:
+    def __getattribute__(self, name):
+        return os.environ.get("QUTE_" + name.upper())
+    def __call__(self, *args, **kwargs):
+        with open(qute.fifo, "w") as f:
+            print(args[0], file=f)
+
+qute = Qute()
+
+
+count = qute.count
+
+if count is None:
+    qute("tab-close")
+    exit(0)
+
+if "0" not in count:
+    qute(f"run-with-count {count} tab-close")
+    exit(0)
+
+last_zero = count[:-1].rfind("0")
+try:
+    left_idx, right_idx = int(count[:last_zero]), int(count[last_zero + 1:])
+except ValueError:
+    qute(f"message-error 'Invalid count: {count}'")
+
+if left_idx > right_idx:
+    right_idx, left_idx = left_idx, right_idx
+
+count = right_idx - left_idx + 1
+for _ in range(count):
+    qute(f"run-with-count {left_idx} tab-close")

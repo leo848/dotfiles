@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+exec >> $QUTE_FIFO
+
+if [ $QUTE_COUNT != "" ]
+then
+	echo "tab-focus $QUTE_COUNT"
+else
+	echo "tab-prev"
+fi
