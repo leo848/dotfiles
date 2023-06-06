@@ -25,6 +25,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym Control+Shift+t kitty
 
 # start a browser
 bindsym $mod+w exec qutebrowser
