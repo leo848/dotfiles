@@ -45,4 +45,9 @@ pathprepend "$HOME/.local/bin"
 pathappend "$HOME/.cargo/bin"
 pathprepend "$HOME/.config/rofi/scripts/"
 
+if [[ $TERM == "linux" ]]; then
+  echo tty detected!
+  return
+fi
+
 eval "$(starship init bash)"
