@@ -37,7 +37,7 @@ fi
 COLOR="#[fg=colour$CODE]"
 END=""
 
-if [ "$COUNT" -eq "1" ]; then
+if [ "$COUNT" -ne "1" ]; then
 	S="s"
 fi
 
