@@ -1,0 +1,38 @@
+#!/bin/sh
+
+FILENAME="/tmp/update-counter"
+
+if [ -e "$FILENAME" ]; then
+	current=$(date +%s)
+	last_modified=$(stat -c "%Y" $FILENAME)
+	if [ $(($current-$last_modified)) -gt 180 ]; then 
+		COUNT=$(checkupdates | wc -l)
+		echo $COUNT > $FILENAME
+	else 
+		COUNT=$(cat $FILENAME)
+	fi
+else
+	COUNT=$(checkupdates | wc -l)
+	echo $COUNT > $FILENAME
+fi
+
+if [ "$COUNT" -eq "0" ]; then
+	CODE=120 #46
+elif [ "$COUNT" -le "3" ]; then
+	CODE=190
+elif [ "$COUNT" -le "6" ]; then
+	CODE=220
+elif [ "$COUNT" -le "10" ]; then
+	CODE=208
+elif [ "$COUNT" -lt "25" ]; then
+	CODE=208
+elif [ "$COUNT" -lt "50" ]; then
+	CODE=202
+else 
+	CODE=196
+fi
+
+COLOR="[38;5;${CODE}m"
+END="[0m"
+
+echo "$COLOR$COUNT$END updates"
