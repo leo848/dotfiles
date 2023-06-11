@@ -34,7 +34,7 @@ fi
 
 # COLOR="[38;5;${CODE}m"
 # END="[0m"
-COLOR="[fg=colour$CODE]"
-END=""
+COLOR="#[fg=colour$CODE]["
+END="]"
 
 echo "$COLOR$COUNT$END updates"
