@@ -17,7 +17,7 @@ else
 fi
 
 if [ "$COUNT" -eq "0" ]; then
-	CODE=120 #46
+	CODE=28 #46
 elif [ "$COUNT" -le "3" ]; then
 	CODE=190
 elif [ "$COUNT" -le "6" ]; then
