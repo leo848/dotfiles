@@ -37,4 +37,8 @@ fi
 COLOR="#[fg=colour$CODE]"
 END=""
 
-echo "$COLOR$COUNT$END"
+if [ "$COUNT" -eq "1" ]; then
+	S="s"
+fi
+
+echo "$COLOR$COUNT$END update$S"
