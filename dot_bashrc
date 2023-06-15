@@ -21,13 +21,7 @@ alias cat='bat'
 alias bathelp='bat --plain --language=help'
 
 pacman() {
-	sudo pacman "$@" &
-	while ps -p $! >&-; do
-		sleep 1
-		rm /tmp/update-counter
-	done
-
-	wait
+	sudo pacman "$@";
 	rm /tmp/update-counter
 }
 
