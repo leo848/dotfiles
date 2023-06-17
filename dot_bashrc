@@ -54,4 +54,5 @@ if [[ $TERM == "linux" ]]; then
   return
 fi
 
+eval "$(zoxide init)"
 eval "$(starship init bash)"
