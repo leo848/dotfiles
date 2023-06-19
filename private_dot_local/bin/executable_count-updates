@@ -2,26 +2,31 @@
 
 FILENAME="/tmp/update-counter"
 
+init_upd_no_save() {
+	UPD=$(checkupdates)
+	COUNT=$(echo $UPD | grep -c "\w")
+}
+
+init_upd() {
+	init_upd_no_save
+	echo $UPD > $FILENAME
+}
+
 if [ -e "$FILENAME" ]; then
 	if [ "$(cat $FILENAME)" = "-" ]; then
-		UPD=$(checkupdates)
-		COUNT=$(echo $UPD | wc -l)
+		init_upd_no_save
 	else
 		current=$(date +%s)
 		last_modified=$(stat -c "%Y" $FILENAME)
 		if [ $(($current-$last_modified)) -gt 180 ]; then 
-			UPD=$(checkupdates)
-			COUNT=$(echo $UPD | wc -l)
-			echo $UPD > $FILENAME
+			init_upd
 		else 
 			UPD=$(cat $FILENAME)
-			COUNT=$(echo $UPD | wc -l)
+			COUNT=$(echo $UPD | grep -c "\w")
 		fi
 	fi
 else
-	UPD=$(checkupdates)
-	COUNT=$(echo $UPD | wc -l)
-	echo $UPD > $FILENAME
+	init_upd
 fi
 
 if [ "$COUNT" -eq "0" ]; then
