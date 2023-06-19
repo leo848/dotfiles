@@ -4,20 +4,24 @@ FILENAME="/tmp/update-counter"
 
 if [ -e "$FILENAME" ]; then
 	if [ "$(cat $FILENAME)" = "-" ]; then
-		COUNT=$(checkupdates | wc -l)
+		UPD=$(checkupdates)
+		COUNT=$(echo $UPD | wc -l)
 	else
 		current=$(date +%s)
 		last_modified=$(stat -c "%Y" $FILENAME)
 		if [ $(($current-$last_modified)) -gt 180 ]; then 
-			COUNT=$(checkupdates | wc -l)
-			echo $COUNT > $FILENAME
+			UPD=$(checkupdates)
+			COUNT=$(echo $UPD | wc -l)
+			echo $UPD > $FILENAME
 		else 
-			COUNT=$(cat $FILENAME)
+			UPD=$(cat $FILENAME)
+			COUNT=$(echo $UPD | wc -l)
 		fi
 	fi
 else
-	COUNT=$(checkupdates | wc -l)
-	echo $COUNT > $FILENAME
+	UPD=$(checkupdates)
+	COUNT=$(echo $UPD | wc -l)
+	echo $UPD > $FILENAME
 fi
 
 if [ "$COUNT" -eq "0" ]; then
@@ -43,6 +47,8 @@ END=""
 
 if [ "$COUNT" -ne "1" ]; then
 	S="s"
+else
+	NAME="($(echo $UPD | awk '{print $1}'))"
 fi
 
-echo "$COLOR$COUNT$END update$S"
+echo "$COLOR$COUNT$END update$S $NAME"
