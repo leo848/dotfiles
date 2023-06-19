@@ -21,8 +21,8 @@ alias cat='bat'
 alias bathelp='bat --plain --language=help'
 
 pacman() {
-	sudo pacman "$@";
 	echo "-" > /tmp/update-counter
+	sudo pacman "$@";
 	rm /tmp/update-counter
 }
 
