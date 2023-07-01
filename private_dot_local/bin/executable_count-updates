@@ -4,7 +4,7 @@ FILENAME="/tmp/update-counter"
 
 init_upd_no_save() {
 	UPD=$(checkupdates)
-	COUNT=$(echo $UPD | grep -c "\w")
+	COUNT=$(echo "$UPD" | grep -c "\w")
 }
 
 init_upd() {
