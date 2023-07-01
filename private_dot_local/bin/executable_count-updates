@@ -9,7 +9,7 @@ init_upd_no_save() {
 
 init_upd() {
 	init_upd_no_save
-	echo $UPD > $FILENAME
+	echo "$UPD" > $FILENAME
 }
 
 if [ -e "$FILENAME" ]; then
@@ -22,7 +22,7 @@ if [ -e "$FILENAME" ]; then
 			init_upd
 		else 
 			UPD=$(cat $FILENAME)
-			COUNT=$(echo $UPD | grep -c "\w")
+			COUNT=$(echo "$UPD" | grep -c "\w")
 		fi
 	fi
 else
@@ -53,7 +53,7 @@ END=""
 if [ "$COUNT" -ne "1" ]; then
 	S="s"
 else
-	NAME=" ($(echo $UPD | awk '{print $1}'))"
+	NAME=" ($(echo "$UPD" | awk '{print $1}'))"
 fi
 
 echo "$COLOR$COUNT$END update$S$NAME"
