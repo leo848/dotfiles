@@ -2,9 +2,10 @@
 
 from qutebrowser.config.configfiles import ConfigAPI  # noqa: F401
 from qutebrowser.config.config import ConfigContainer  # noqa: F401
+from string import Template
 
 import json
-from os.path import join, split
+from os.path import join, split, expanduser
 
 config = config  # type: ConfigAPI # noqa: F821 pylint: disable=E0602,C0103
 c = c  # type: ConfigContainer # noqa: F821 pylint: disable=E0602,C0103
@@ -99,7 +100,7 @@ c.colors.webpage.bg = "black"
 c.colors.webpage.preferred_color_scheme = "dark"
 # }}}
 
-c.completion.favorite_paths = ["/home/leo/", "/home/leo/Documents/", "/home/leo/Schule/", "/home/leo/Projects"]
+c.completion.favorite_paths = list(map(expanduser, ["~", "~/Documents/", "~/Schule/", "~/Projects"]))
 c.completion.use_best_match = True
 
 c.content.pdfjs = True
