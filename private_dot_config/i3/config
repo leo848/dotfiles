@@ -1,5 +1,7 @@
-# set $mod Mod1 # Alt
-set $mod Mod4 # Super
+# Alt:
+# set $mod Mod1
+# Super:
+set $mod Mod4
 font pango:Iosevka 12
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
