@@ -10,7 +10,7 @@ font pango:Iosevka 12
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- mylock
-exec --no-startup-id /home/leo/.local/bin/mylock-hook
+exec --no-startup-id sh -c '~/.local/bin/mylock-hook'
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -37,7 +37,7 @@ bindsym $mod+w exec qutebrowser
 bindsym $mod+Shift+q kill
 
 # lock screen
-bindsym $mod+F4 exec --no-startup-id /home/leo/.local/bin/mylock
+bindsym $mod+F4 exec --no-startup-id sh -c '~/.local/bin/mylock'
 
 # mod+d runs rofi.
 # rofi is a window switcher, application launcher and dmenu replacement.
@@ -100,8 +100,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # press the brightness keys to change the backlight
-bindsym XF86MonBrightnessUp exec --no-startup-id /home/leo/.local/bin/mybrightness up
-bindsym XF86MonBrightnessDown exec --no-startup-id /home/leo/.local/bin/mybrightness down
+bindsym XF86MonBrightnessUp exec --no-startup-id sh -c '~/.local/bin/mybrightness up'
+bindsym XF86MonBrightnessDown exec --no-startup-id sh -c '~/.local/bin/mybrightness down'
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
