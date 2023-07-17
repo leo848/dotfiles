@@ -98,7 +98,7 @@ source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/copilot.vim
 source ~/.config/nvim/plugins/ctrlsf.vim
 source ~/.config/nvim/plugins/coc.vim
-source ~/.config/nvim/plugins/easy-align.vim
+" source ~/.config/nvim/plugins/easy-align.vim
 source ~/.config/nvim/plugins/editorconfig.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/fzf.vim
