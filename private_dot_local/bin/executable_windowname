@@ -13,8 +13,8 @@ function metadata_emoji() {
     fi
     wallpaper=$(tail -n 1 /tmp/wallpaper.log)
 
-    flash=$(exiftool -bm -Flash "$wallpaper")
-    exposure=$(exiftool -bm -ExposureTime "$wallpaper")
+    flash=$(exiftool -b -m -Flash "$wallpaper")
+    exposure=$(exiftool -b -m -ExposureTime "$wallpaper")
 
     # If flash is 0 or empty, there is no flash
     if [[ -z "$flash" || "$flash" == "0" ]]; then
