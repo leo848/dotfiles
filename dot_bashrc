@@ -35,6 +35,8 @@ help() {
 	"$@" --help 2>&1 | bathelp
 }
 
+alias h='help'
+
 pathprepend() {
 	if ! grep -q "$PATH" <<<"$1"; then
 		PATH="$1:$PATH"
