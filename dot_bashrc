@@ -13,6 +13,7 @@ export VISUAL="nvim"
 alias ls='exa --icons'
 alias la='exa -a --icons'
 alias ll='exa --long -a --icons'
+alias tree='exa --tree'
 
 alias vim='nvim'
 alias py='python'
