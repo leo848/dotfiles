@@ -25,7 +25,7 @@ config.bind("k", "cmd-run-with-count 6 scroll up")
 config.bind("J", "cmd-run-with-count 10 scroll down")
 config.bind("K", "cmd-run-with-count 10 scroll up")
 
-config.bind("!", "set-cmd-text :open -tr !")
+config.bind("!", "cmd-set-text :open -tr !")
 
 config.bind("gt", "spawn --userscript vim-tab-next")
 config.bind("gT", "spawn --userscript vim-tab-prev")
@@ -33,7 +33,7 @@ config.bind("gT", "spawn --userscript vim-tab-prev")
 config.bind("gn", "navigate next")
 config.bind("gN", "navigate prev")
 
-config.bind("O", "set-cmd-text -s :open -tr")
+config.bind("O", "cmd-set-text -s :open -tr")
 
 config.bind("<Space>v", "spawn mpv {url}")
 config.bind("<Space>f", "spawn firefox {url}")
@@ -58,7 +58,7 @@ config.bind("<Space>pj", "set tabs.position bottom")
 config.bind("<Space>ph", "set tabs.position left")
 config.bind("<Space>pl", "set tabs.position right")
 
-config.bind("ö", "set-cmd-text -s :quickmark-load")
+config.bind("ö", "cmd-set-text -s :quickmark-load")
 
 config.bind("<Space>t", "config-cycle --print content.proxy 'socks://localhost:9050' 'system'")
 config.bind("<Space>bg", "config-cycle --print colors.webpage.bg 'black' 'white'")
