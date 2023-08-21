@@ -19,11 +19,11 @@ c.aliases["qa"] = "quit --save"
 
 config.bind("d", "spawn --userscript tab-close")
 
-config.bind("j", "run-with-count 6 scroll down")
-config.bind("k", "run-with-count 6 scroll up")
+config.bind("j", "cmd-run-with-count 6 scroll down")
+config.bind("k", "cmd-run-with-count 6 scroll up")
 
-config.bind("J", "run-with-count 10 scroll down")
-config.bind("K", "run-with-count 10 scroll up")
+config.bind("J", "cmd-run-with-count 10 scroll down")
+config.bind("K", "cmd-run-with-count 10 scroll up")
 
 config.bind("!", "set-cmd-text :open -tr !")
 
