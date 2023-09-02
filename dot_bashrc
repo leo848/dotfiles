@@ -61,7 +61,9 @@ fi
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
 
-_not_inside_tmux() { [[ -z "$TMUX" ]] }
+_not_inside_tmux() {
+	[[ -z "$TMUX" ]]
+}
 
 ensure_tmux_is_running() {
   if _not_inside_tmux; then
