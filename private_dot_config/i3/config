@@ -1,5 +1,5 @@
 # sed::replace_automatically::mod_key_based_on_keyboard
-set $mod Mod1
+set $mod Mod4
 
 font pango:Iosevka 12
 
