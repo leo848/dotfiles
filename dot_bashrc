@@ -14,6 +14,7 @@ alias ls='exa --icons'
 alias la='exa -a --icons'
 alias ll='exa --long -a --icons'
 alias tree='exa --tree'
+alias fmt='cargo +nightly fmt'
 
 alias vim='nvim'
 alias py='python'
