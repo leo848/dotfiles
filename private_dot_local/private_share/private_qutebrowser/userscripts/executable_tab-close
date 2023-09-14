@@ -1,7 +1,6 @@
 #!/bin/python
 
 import os
-import time
 
 class Qute:
     def __getattribute__(self, name):
@@ -28,10 +27,11 @@ try:
     left_idx, right_idx = int(count[:last_zero]), int(count[last_zero + 1:])
 except ValueError:
     qute(f"message-error 'Invalid count: {count}'")
+    exit(1)
 
 if left_idx > right_idx:
     right_idx, left_idx = left_idx, right_idx
 
 count = right_idx - left_idx + 1
 for _ in range(count):
-    qute(f"run-with-count {left_idx} tab-close")
+    qute(f"cmd-run-with-count {left_idx} tab-close")
