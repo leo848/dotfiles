@@ -38,6 +38,9 @@ bindsym $mod+Shift+q kill
 # lock screen
 bindsym $mod+F4 exec --no-startup-id sh -c '~/.local/bin/mylock'
 
+# use monitor
+bindsym $mod+Shift+m exec moninstall
+
 # mod+d runs rofi.
 # rofi is a window switcher, application launcher and dmenu replacement.
 bindsym $mod+d exec launcher_t3 -show drun
