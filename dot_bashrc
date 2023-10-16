@@ -73,3 +73,11 @@ ensure_tmux_is_running() {
 }
 
 ensure_tmux_is_running
+
+# pnpm
+export PNPM_HOME="/home/lina/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
