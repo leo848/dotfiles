@@ -42,8 +42,10 @@ else
     # TODO: Memoize the output of this script.
     # If the wallpaper hasn't changed, return the cached output
 
-    DATE=$(exiftool -d "%d.%m.%Y %H:%M:%S" -DateTimeOriginal "$WALLPAPER" | awk '{print $4 " " $5}')
-    META=$(metadata_emoji)
+    # DATE=$(exiftool -d "%d.%m.%Y %H:%M:%S" -DateTimeOriginal "$WALLPAPER" | awk '{print $4 " " $5}')
+    # META=$(metadata_emoji)
 
-    echo "$DATE $META"
+    # echo "$DATE $META"
+
+    echo "$(image-essence "$WALLPAPER")"
 fi
