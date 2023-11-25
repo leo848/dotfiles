@@ -15,18 +15,13 @@ alias la='exa -a --icons'
 alias ll='exa --long -a --icons'
 alias tree='exa --tree'
 alias fmt='cargo +nightly fmt'
+alias auth='sudo -v -p "authenticate: "'
 
 alias vim='nvim'
 alias py='python'
 
 alias cat='bat'
 alias bathelp='bat --plain --language=help'
-
-pacman() {
-	echo "-" > /tmp/update-counter
-	sudo pacman "$@";
-	rm /tmp/update-counter
-}
 
 alias che='chezmoi'
 alias btop='btop --utf-force'
@@ -38,6 +33,13 @@ help() {
 }
 
 alias h='help'
+
+pacman() {
+	echo "-" > /tmp/update-counter
+	sudo pacman "$@";
+	rm /tmp/update-counter
+}
+
 
 pathprepend() {
 	if ! grep -q "$PATH" <<<"$1"; then
