@@ -36,7 +36,8 @@ alias h='help'
 
 pacman() {
 	echo "-" > /tmp/update-counter
-	sudo pacman "$@";
+	auth
+	pacman "$@";
 	rm /tmp/update-counter
 }
 
