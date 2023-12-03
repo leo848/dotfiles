@@ -28,6 +28,9 @@ alias btop='btop --utf-force'
 
 alias grep='grep --color=auto'
 
+export HISTFILESIZE=
+export HISTSIZE=
+
 help() {
 	"$@" --help 2>&1 | bathelp
 }
