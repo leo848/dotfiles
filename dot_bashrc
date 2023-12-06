@@ -45,6 +45,8 @@ pacman() {
 	auth
 	sudo pacman "$@";
 	rm /tmp/update-counter
+	setxkbmap de
+	super-caps
 }
 
 
