@@ -16,7 +16,12 @@ fi
 while true
 do
 	# The glob is stored in the file "~/.config/update-wallpapers/glob.txt"
-	wall_glob=$(cat ~/.config/update-wallpapers/glob.txt)
+	if (( RANDOM % 2 ))
+	then
+		wall_glob=$(cat ~/.config/update-wallpapers/glob.txt)
+	else
+		wall_glob=$(cat ~/.config/update-wallpapers/glob2024.txt)
+	fi
 	# Expand the glob
 	wall=$(eval find "$wall_glob" | shuf -n 1)
 
