@@ -1,0 +1,27 @@
+#!/bin/bash
+
+filename=$(tail -n 1 /tmp/wallpaper.log || exit 1)
+echo "$0: filename is$filename"
+if ! [ -f $filename ]
+then
+	exit 1
+fi
+
+input=
+for n in $(seq 0 5)
+do
+	input="$input$n ("
+	for n in $(seq 0 $(($n - 1 )) )
+	do
+		input="$input⭐"
+	done
+	input="$input)"
+	input+=$'\n'
+done
+echo $input
+rating=$(echo "$input" | rofi -dmenu -p "rating (⭐ – ⭐⭐⭐⭐⭐)" || 0)
+echo "$0: Rating is $rating"
+rating=${rating::1}
+
+echo exiftool -p -xmp:rating="$rating" "$filename"
+exiftool -xmp:Rating="$rating" "$filename"
