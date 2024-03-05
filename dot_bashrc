@@ -28,6 +28,8 @@ alias btop='btop --utf-force'
 
 alias grep='grep --color=auto'
 
+alias share='live-server --host=192.162.2.117'
+
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTTIMEFORMAT="%F %T "
