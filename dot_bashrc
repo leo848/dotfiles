@@ -15,6 +15,7 @@ alias la='exa -a --icons'
 alias ll='exa --long -a --icons'
 alias tree='exa --tree'
 alias fmt='cargo +nightly fmt'
+alias cal='cal -m'
 alias auth='sudo -v -p "authenticate: "'
 
 alias vim='nvim'
@@ -47,8 +48,6 @@ pacman() {
 	auth
 	sudo pacman "$@";
 	rm /tmp/update-counter
-	setxkbmap de
-	super-caps
 }
 
 
@@ -66,6 +65,9 @@ pathappend() {
 pathprepend "$HOME/.local/bin"
 pathappend "$HOME/.cargo/bin"
 pathprepend "$HOME/.config/rofi/scripts/"
+pathappend "/opt/gurobi1103/linux64/bin"
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/gurobi1103/linux64/lib"
 
 if [[ $TERM == "linux" ]]; then
   echo tty detected!
@@ -87,10 +89,11 @@ ensure_tmux_is_running() {
 
 ensure_tmux_is_running
 
-# pnpm
-export PNPM_HOME="/home/lina/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
+export GRIM_DEFAULT_DIR=~/Pictures/Screenshots
+export GUROBI_HOME=/opt/gurobi1103/linux64
+export GRB_LICENSE_FILE=~/.local/share/gurobi/gurobi.lic

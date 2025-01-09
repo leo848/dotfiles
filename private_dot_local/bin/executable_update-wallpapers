@@ -27,7 +27,15 @@ do
 
 	echo "Setting wallpaper to $wall"
 	echo "$wall" >> /tmp/wallpaper.log
-	feh --bg-fill "$wall"
+
+	if [ -n $HYPRLAND_INSTANCE_SIGNATURE ]
+	then
+		hyprctl hyprpaper unload all > /dev/null
+		hyprctl hyprpaper preload "$wall" > /dev/null
+		hyprctl hyprpaper wallpaper "eDP-1,$wall" > /dev/null
+	else
+		feh --bg-fill "$wall"
+	fi
 	# Sleep for the given time (the first argument) or 5 minutes if no argument is given
 	sleep "${1:-300}"
 done

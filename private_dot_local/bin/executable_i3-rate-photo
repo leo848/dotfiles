@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -xe
+
 filename=$(tail -n 1 /tmp/wallpaper.log || exit 1)
 echo "$0: filename is$filename"
 if ! [ -f $filename ]
@@ -19,7 +21,13 @@ do
 	input+=$'\n'
 done
 echo $input
-rating=$(echo "$input" | rofi -dmenu -p "rating (⭐ – ⭐⭐⭐⭐⭐)" || 0)
+
+if [ "$HYPRLAND_INSTANCE_SIGNATURE" ]
+then
+	rating=$(echo "$input" | tofi --prompt-text "rating (⭐ – ⭐⭐⭐⭐⭐)" || 0)
+else
+	rating=$(echo "$input" | rofi -dmenu -p "rating (⭐ – ⭐⭐⭐⭐⭐)" || 0)
+fi
 echo "$0: Rating is $rating"
 rating=${rating::1}
 

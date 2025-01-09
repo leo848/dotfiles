@@ -1,1 +1,9 @@
-/usr/bin/rofi -config ~/.config/rofi.rasi $@
+set -xe
+
+#!/usr/bin/sh
+if [ -e /usr/bin/rofi ]
+then
+	/usr/bin/rofi -config ~/.config/rofi.rasi $@
+else
+	/usr/bin/tofi $@
+fi
